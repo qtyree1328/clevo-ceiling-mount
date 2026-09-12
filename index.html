@@ -207,6 +207,8 @@ table.d tbody tr:hover{background:color-mix(in srgb,var(--fast) 4%,transparent)}
 .flag.ok .fh{color:var(--good)} .flag.amber .fh{color:var(--warn)}
 .flag p{margin:0;font-size:13.5px;line-height:1.6;max-width:none}
 .flag p+p{margin-top:8px}
+.flag ul{margin:8px 0 0;padding-left:19px;font-size:13.5px;line-height:1.6}
+.flag li{margin:5px 0}
 
 ol.steps{list-style:none;padding:0;margin:20px 0;counter-reset:s}
 ol.steps>li{
@@ -423,24 +425,38 @@ footer a{color:var(--fast)}
 
   <div class="flag">
     <div class="fh">Why not the supplied anchors and screws</div>
-    <p><b>1. Six of the eight holes have nothing behind them.</b> This one is decisive and it is not a judgement call, it
-    is geometry. Your joists sit 16&#8243; apart; the mounting holes sit 27<sup>1</sup>&frasl;<sub>8</sub>&#8243; apart. Only two holes
-    land on solid timber. The other six sit over open bay &mdash; &frac12;&#8243; of drywall, then air. No anchor of any kind
-    grips air. You have to add wood up there before <em>any</em> fixing works, and once you have, you may as well use the
-    strong one.</p>
-    <p><b>2. They are expansion plugs, made for concrete.</b> A fischer SXRL is a nylon sleeve that grips by being wedged
-    outward against a hard hole wall. Softwood has no hard hole wall &mdash; the plug just crushes the fibres. Worse, an
-    expanding wedge driven into a 1&frac12;&#8243;-wide joist is, mechanically, a splitting tool.</p>
-    <p><b>3. Clevo say so themselves.</b> Manual p.&nbsp;7: the supplied screws and plugs are
+    <p><b>1. As delivered, six of the eight holes have nothing behind them.</b> Your joists sit 16&#8243; apart; the
+    mounting holes sit 27<sup>1</sup>&frasl;<sub>8</sub>&#8243; apart. Only two land on solid timber. The other six sit over
+    open bay &mdash; &frac12;&#8243; of drywall, then air. That on its own rules out fitting it as supplied.</p>
+
+    <p><b>2. Adding blocking does not rescue them.</b> This is the part worth understanding, because once your blocks are in
+    there <em>is</em> wood behind all eight holes, and the obvious thought is that the supplied anchors should now work.
+    They still don't, because a fischer SXRL is an <b>expansion</b> plug: a nylon sleeve that grips by being wedged outward
+    against a hard hole wall. That mechanism needs concrete.</p>
+    <ul>
+      <li>In softwood there is no hard hole wall. The sleeve simply compresses the fibres, and the radial pressure that
+      creates the grip bleeds away &mdash; then keeps bleeding away, because compressed wood creeps for months.</li>
+      <li><b>In wood the plug makes the fixing weaker, not stronger.</b> You need a plug in concrete because a screw cannot
+      cut threads in concrete. In wood the screw threads bite the fibres directly. Putting a nylon sleeve in between swaps a
+      wood-thread grip for a nylon-on-crushed-wood friction grip. If you were going to use the supplied screws at all, the
+      first thing you would do is throw the plugs away.</li>
+      <li>Your blocks are 1&frac12;&#8243; wide. An 11&nbsp;mm hole down the centre leaves about &frac12;&#8243; of wood each
+      side, and an expanding plug is mechanically a wedge. In a narrow piece that is also working in bending, that is
+      precisely how you split it. A bolt sitting in a clearance hole pushes outward with zero force.</li>
+      <li>Campus and pull-up moves are cyclic shock loads. A friction grip in timber wallows its hole; a clamped joint does
+      not care.</li>
+    </ul>
+
+    <p><b>3. Clevo scope them to concrete themselves.</b> Manual p.&nbsp;7: the supplied screws and plugs are
     <i lang="de">&bdquo;f&uuml;r Betondecken geeignet&ldquo;</i> &mdash; suitable for concrete ceilings &mdash; and the unit
-    may only be fitted to solid ceilings. A drywalled joist ceiling is neither.</p>
-    <p><b>And bolts rather than screws, because the attic is free.</b> A screw driven up into a joist is held by its
-    threads, and hanging on it pulls it straight back out &mdash; withdrawal, the weakest way to load a screw, and the mode
-    that degrades fastest under the repeated shock of campus moves. A bolt passes right through with a nut on top: the
-    timber is clamped, not gripped. You are already in the attic fitting the blocking, so adding a washer and a nut costs
-    you one minute per bolt. If you had no attic access you could not fit the blocking either, and this whole approach
-    would be off the table.</p>
-  </div>
+    may only be fitted to solid ceilings. There is no published timber value for an SXRL because it is not a timber anchor.</p>
+
+    <p><b>And the upgrade costs almost nothing.</b> A screw driven up into wood is held by its threads, and hanging on it
+    pulls it straight back out &mdash; withdrawal, the weakest way to load a screw. A bolt passes right through with a nut on
+    top: the timber is clamped, not gripped, and to fail it has to crush the wood under the washer or snap the steel. You
+    are already in the attic fitting the blocking, so a washer and a nut is one extra minute per bolt and about $20 the lot.
+    You also get something you cannot otherwise have &mdash; a fixing you can put a spanner on and check. A plug slowly
+    creeping loose above your ceiling gives you no warning at all.</p></div>
   <div class="tw"><table class="d">
     <thead><tr><th>Item</th><th>Spec</th><th class="q">Qty</th></tr></thead>
     <tbody id="bom"></tbody>
