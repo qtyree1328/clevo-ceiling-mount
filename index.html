@@ -387,6 +387,8 @@ footer a{color:var(--fast)}
       <dt>On edge</dt><dd>Standing the 2x6 up tall, not flat. Same board, seven times stiffer.</dd>
       <dt>Rail</dt><dd>The folded top lip of the module's steel sides, with the bolt holes in it.</dd>
       <dt>A35</dt><dd>A galvanised steel angle bracket. Two hold each end of each block to the joists.</dd>
+      <dt>Snap a line</dt><dd>Stretch a chalk-coated string tight between two marks, lift it straight off the surface and let go &mdash; it slaps down and leaves a dead-straight line. Over the 3&ndash;4&nbsp;ft you need here, a long straightedge and a pencil does the same job.</dd>
+      <dt>Pilot hole</dt><dd>A small locating hole, drilled first. Here they are <em>sightlines</em>: you drill them from the room so you can find the exact spots from the attic.</dd>
       <dt>Clear span</dt><dd>How far a joist reaches <em>unsupported</em>, wall to wall &mdash; not the board's length. A joist resting on a wall at each end of a 14&nbsp;ft room has a 14&nbsp;ft clear span. Longer span, more bounce.</dd>
     </dl>
   </details>
@@ -423,6 +425,20 @@ footer a{color:var(--fast)}
   </table></div>
   <h3>Tools</h3>
   <p id="tools"></p>
+
+  <h3>Drilling &mdash; which bit, which direction</h3>
+  <p>Fourteen holes in total, in four batches. Only one bit has to be long, and only one batch is drilled from the attic.</p>
+  <div class="tw"><table class="d">
+    <thead><tr><th>Batch</th><th>Bit</th><th>Where you stand</th><th>Depth</th></tr></thead>
+    <tbody id="drills"></tbody>
+  </table></div>
+  <div class="flag">
+    <div class="fh">Why the deep holes get drilled downward</div>
+    <p>Running a <sup>7</sup>&frasl;<sub>16</sub>&#8243; bit 5<sup>3</sup>&frasl;<sub>8</sub>&#8243; straight up over your head is genuinely hard &mdash;
+    no weight behind the drill, chips in your face, and a bit that wanders. Wander in a 1&frac12;&#8243; joist is exactly what you cannot afford.
+    From the attic you stand over it, put your bodyweight behind the drill and can see that it is vertical. Same for the blocks: drill them
+    lying flat on the deck <em>before</em> you fit them, never overhead afterwards.</p>
+  </div>
 </section>
 
 <section class="band">
@@ -1112,15 +1128,32 @@ function fillTables(){
     ["Fender washers", "&#8540;&#8243; &times; 1&frac12;&#8243; OD &mdash; attic side, on the wood", "8"],
     ["Flat washers", "&#8540;&#8243; &mdash; room side, against the steel", "8"],
     ["Lock nuts", "&#8540;&#8243;-16 nylon insert", "8"],
-    ["Crash pad", "Bouldering pad or folded mattress, under the unit", "1"]
+    ["Crash pad", "Bouldering pad or folded mattress, under the unit", "1"],
+    ["Pilot bit", "&#8539;&#8243; &times; 12&#8243; bell hanger / aircraft extension bit", "1"],
+    ["Bolt-hole bit", "<sup>7</sup>&frasl;<sub>16</sub>&#8243; spade bit", "1"],
+    ["Bit extension", "6&#8243; hex shank &mdash; a 6&#8243; spade bit alone will not reach through 5<sup>3</sup>&frasl;<sub>8</sub>&#8243;", "1"]
   ];
   document.getElementById("bom").innerHTML = BOM.map(function(r){
     return "<tr><td><b>"+r[0]+"</b></td><td>"+r[1]+'</td><td class="q">'+r[2]+"</td></tr>"; }).join("");
 
   document.getElementById("tools").innerHTML =
-    "Stud finder &middot; &#8539;&#8243; &times; 12&#8243; bit for pilots &middot; <sup>7</sup>&frasl;<sub>16</sub>&#8243; &times; 12&#8243; auger &middot; " +
-    "impact driver &middot; two <sup>9</sup>&frasl;<sub>16</sub>&#8243; sockets &middot; 36&#8243; straightedge &middot; " +
-    "chalk line, tape, square &middot; headlamp &middot; a plank to kneel on &middot; P100 mask, goggles and gloves.";
+    "Corded drill, or an 18V with a side handle &mdash; a <sup>7</sup>&frasl;<sub>16</sub>&#8243; bit can grab and twist your wrist &middot; " +
+    "impact driver for the clips &middot; stud finder &middot; two <sup>9</sup>&frasl;<sub>16</sub>&#8243; sockets or spanners &middot; " +
+    "36&#8243; straightedge &middot; tape, pencil, square &middot; chalk line or a long straightedge &middot; " +
+    "headlamp &middot; a plank to kneel on &middot; P100 mask, sealed goggles and gloves.";
+
+  const DRILLS = [
+    ["8 pilot holes", "&#8539;&#8243; &times; 12&#8243; long bit &mdash; sold as a <b>bell&nbsp;hanger</b> or <b>aircraft extension</b> bit",
+     "Room, drilling up", "Six only pass &frac12;&#8243; of drywall. The two on the joist must go the full 5<sup>7</sup>&frasl;<sub>8</sub>&#8243; and out the top &mdash; that is the only reason you need a 12&#8243; bit."],
+    ["6 holes in the blocks", "<sup>7</sup>&frasl;<sub>16</sub>&#8243; spade bit + 6&#8243; hex extension",
+     "On the floor, before fitting", "5<sup>3</sup>&frasl;<sub>8</sub>&#8243; through the block on edge. One block takes a single hole, the other takes two."],
+    ["2 holes in the joist", "<sup>7</sup>&frasl;<sub>16</sub>&#8243; spade bit + 6&#8243; hex extension",
+     "Attic, drilling down", "5<sup>3</sup>&frasl;<sub>8</sub>&#8243;, centred on the pilot that came through the joist top."],
+    ["6 holes in the drywall", "<sup>7</sup>&frasl;<sub>16</sub>&#8243; &mdash; any short bit",
+     "Room, drilling up", "&frac12;&#8243; only. The hole in the block above guides the bit."]
+  ];
+  document.getElementById("drills").innerHTML = DRILLS.map(function(d){
+    return "<tr><td><b>"+d[0]+"</b></td><td>"+d[1]+"</td><td>"+d[2]+"</td><td>"+d[3]+"</td></tr>"; }).join("");
 
   const SEQ = [
     ["§","Bench","on the floor, before you touch the ceiling"],
@@ -1130,14 +1163,14 @@ function fillTables(){
      "Wall to wall, the unsupported distance. Nearer a supporting wall is always stiffer."],
 
     ["§","Room","set out and pilot &mdash; nothing is permanent yet"],
-    ["Find the centre joist and snap its centreline.",
-     "Stud finder, then a &#8539;&#8243; test hole to confirm. Wood shavings mean you hit it; a clean hole into air means you missed."],
+    ["Find the centre joist and mark its centreline.",
+     "Stud finder, then a &#8539;&#8243; test hole to confirm &mdash; wood shavings mean you hit it, a clean hole into air means you missed. Snap a chalk line along it, or just rule it with a long straightedge."],
     ["Mark the two bolt lines " + fmt(BOLT_SPAN) + " apart along that line.",
      "Measure the diagonal between them to confirm they sit square to the joist."],
     ["Mark six more holes, stepping " + fmt(ROW_PITCH) + " across the joist.",
      "From each bolt line: one step one way, two steps the other. Eight marks total &mdash; two land on the joist, six over hollow bay."],
     ["Drill a &#8539;&#8243; pilot up through all eight marks.",
-     "Slow and dead vertical. These are not the final holes &mdash; they are how you find the spots from the attic."],
+     "Use the 12&#8243; bell hanger bit. Slow and dead vertical. Six break into open bay after &frac12;&#8243;; the two on the joist keep going the full 5<sup>7</sup>&frasl;<sub>8</sub>&#8243; until they surface on top. These are not the final holes &mdash; they are how you find the spots from above."],
 
     ["§","Attic","blocking &mdash; the bulk of the work"],
     ["Fold the insulation back in both bays.",
